@@ -47,7 +47,7 @@
 1. flex-grow 扩展比率
     ```
     默认值：0，表示不扩展。
-    当主轴宽-子项基准值和 M>0 时有效，flex-shrink 无效。
+    当 "主轴宽-子项基准值和" M>0 时有效，flex-shrink 无效。
     每个子项的实际宽 = basis + 扩展宽。
 
     // 实例
@@ -60,7 +60,7 @@
 1. flex-shrink 收缩比率
     ```
     默认值：1，表示按原大小放缩。
-    当主轴宽-子项基准值和 M<0 时有效，flex-grow 无效。
+    当 "主轴宽-子项基准值和" M<0 时有效，flex-grow 无效。
     每个子项的实际宽 = basis - 缩减宽。
 
     // 实例
@@ -70,9 +70,12 @@
     .flex:nth-child(3) {flex:3 6 400px;}   缩减宽度为: 6*400/(4*300+5*200+6*400)*300px
     ```
 
-## flex 实例
-
-## flex 使用注意
+1. flex 使用注意
     ```
     设为 flex 布局以后，子元素的 float、clear、vertical-align 属性将失效。
+    当 flex-wrap 不是 nowrap 时为多行效果，align-content 属性生效。
     ```
+
+
+## flex 实例
+1. [筛子九点](example/dice.html)
