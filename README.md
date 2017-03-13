@@ -42,6 +42,7 @@
     flex: none;       // 0  0  auto
     flex: auto;       // 1  1  auto
     flex: 1;          // 1  1  0%
+    flex: 4;          // 4  1  0%
     ```
 
 1. flex-grow 扩展比率
@@ -73,10 +74,19 @@
 1. flex 使用注意
     ```
     设为 flex 布局以后，子元素的 float、clear、vertical-align 属性将失效。
-    当 flex-wrap 不是 nowrap 时为多行效果，align-content 属性生效。
+
+    当 flex 为多行效果，align-content 属性生效。
+
+    flex-direction 为 row 时：Main-Axis 方向是从左到右，Cross-Axis 方向是从上到下；
+    flex-direction 为 column 时：Main-Axis 方向是从上往下，Cross-Axis 方向是从右往左。
+
+    当flex横向分均排列子项目时，
+        在第一项设置（margin-right:auto;）就会将整行多余的margin放在第一项后面；
+        在第一项后面设置（margin-left:auto; margin-right:auto;）可以将第一项居中。
     ```
 
 
 ## flex 实例
 1. [筛子九点](https://yuwl798180.github.io/flexdemo/example/dice.html)
 1. [圣杯布局](https://yuwl798180.github.io/flexdemo/example/HolyGrail.html)
+1. [纯flex布局音乐盒](https://yuwl798180.github.io/flexdemo/example/musicapp.html)
