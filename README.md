@@ -5,30 +5,30 @@
 1. flex 容器
     ```
     flex-flow
-    flex-direction
-    flex-wrap
-    justify-content
-    align-items
-    align-content
+        flex-direction || row
+        flex-wrap || nowrap
+    justify-content || flex-start
+    align-items || stretch
+    align-content || stretch
     ```
 
 1. flex 项目
     ```
     flex
-    flex-grow
-    flex-shrink
-    flex-basis
-    order
-    align-self
+        flex-grow || 0
+        flex-shrink || 1
+        flex-basis || auto
+    order || 0
+    align-self || 覆盖 align-items
     ```
 
 1. 使用复合属性
     ```
     // 容器属性
     flex-flow
-    justify-direction
+    justify-content
     align-items
-    align-content    // 多行时的排列
+    align-content || 多行时的排列
 
     // 项目属性
     flex
@@ -47,8 +47,32 @@
 1. flex-grow 扩展比率
     ```
     默认值：0，表示不扩展。
-    当项目 basis 总和超过容器宽，grow 无效。
-    当项目 basis 总和小于容器宽，剩余空间按比例分配；不设置值（即0）不分配。
+    当主轴宽-子项基准值和 M>0 时有效，flex-shrink 无效。
+    每个子项的实际宽 = basis + 扩展宽。
+
+    // 实例
+    .flex {display:flex; width:1000px;}
+    .flex:nth-child(1) {flex:1 4 200px;}   扩展宽度为: 1/(1+2+3)*100px
+    .flex:nth-child(2) {flex:2 5 300px;}   扩展宽度为: 2/(1+2+3)*100px
+    .flex:nth-child(3) {flex:3 6 400px;}   扩展宽度为: 3/(1+2+3)*100px
      ```
 
 1. flex-shrink 收缩比率
+    ```
+    默认值：1，表示按原大小放缩。
+    当主轴宽-子项基准值和 M<0 时有效，flex-grow 无效。
+    每个子项的实际宽 = basis - 缩减宽。
+
+    // 实例
+    .flex {display:flex; width:600px;}
+    .flex:nth-child(1) {flex:1 4 300px;}   缩减宽度为: 4*300/(4*300+5*200+6*400)*300px
+    .flex:nth-child(2) {flex:2 5 200px;}   缩减宽度为: 5*200/(4*300+5*200+6*400)*300px
+    .flex:nth-child(3) {flex:3 6 400px;}   缩减宽度为: 6*400/(4*300+5*200+6*400)*300px
+    ```
+
+## flex 实例
+
+## flex 使用注意
+    ```
+    设为 flex 布局以后，子元素的 float、clear、vertical-align 属性将失效。
+    ```
