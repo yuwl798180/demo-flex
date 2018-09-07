@@ -1,4 +1,4 @@
-# flexdemo
+# flex demo
 
 ## 基本规则
 
