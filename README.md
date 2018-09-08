@@ -89,4 +89,4 @@
 ## flex 实例
 1. [筛子九点](https://yuwl798180.github.io/flexdemo/example/dice.html)
 1. [圣杯布局](https://yuwl798180.github.io/flexdemo/example/HolyGrail.html)
-1. [纯flex布局音乐盒](https://yuwl798180.github.io/flexdemo/example/musicapp.html)
+1. [纯flex布局音乐盒](https://yuwl798180.github.io/demo-flex/example/musicapp.html)
